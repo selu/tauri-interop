@@ -122,7 +122,7 @@ pub fn derive_field(stream: TokenStream) -> TokenStream {
 
                 log::trace!("Emitted event [{}]", #event_name);
 
-                handle.emit_all(#event_name, parent.#parent_field_name.clone())
+                handle.emit(#event_name, parent.#parent_field_name.clone())
             }
 
             fn update(parent: &mut #parent, handle: &::tauri::AppHandle, v: Self::Type) -> Result<(), ::tauri::Error> {

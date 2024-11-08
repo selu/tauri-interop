@@ -17,7 +17,7 @@ all-features = true
 proc-macro = true
 
 [dependencies]
-syn = { version = "^2.0", features = [ "full", "extra-traits" ]}
+syn = { version = "^2.0", features = ["full", "extra-traits"] }
 quote = "^1.0"
 convert_case = "^0.6"
 lazy_static = "^1.4"
@@ -25,17 +25,17 @@ proc-macro2 = "^1.0"
 proc-macro-error = "1.0.4"
 
 [dev-dependencies]
-tauri = { version = "2.0.0-beta", default-features = false, features = ["wry"] }
+tauri = { version = "2.0.0", default-features = false, features = ["wry"] }
 log = "^0.4"
-serde = { version = "^1.0", features = [ "derive" ] }
+serde = { version = "^1.0", features = ["derive"] }
 # required because the intented usage is to use the main crate,
 # for testing we need the reexported macros from tauri-interop
 tauri-interop = { path = "..", features = ["event", "initial_value"] }
 
 [features]
 default = []
-event   = []
-leptos  = []
+event = []
+leptos = []
 initial_value = []
 # feature to get info that context is wasm
-_wasm   = []
+_wasm = []
